@@ -1,0 +1,712 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --azul: #0b1f3b;
+    --azul-claro: #2e5b88;
+    --celeste: #7ea4d9;
+    --crema: #f5f1e6;
+    --tinta: #102744;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--crema);
+    color: var(--tinta);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.barra {
+    width: 100%;
+    min-height: 72px;
+    padding: 0 7%;
+    background: #0b1a35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.marca img {
+    width: 105px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.navegacion {
+    display: flex;
+    gap: 28px;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navegacion a:hover,
+.navegacion .activo {
+    color: var(--celeste);
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+}
+
+.boton-claro {
+    background: var(--crema);
+    color: var(--azul);
+}
+
+.boton-borde {
+    border: 1.5px solid var(--azul);
+    color: var(--azul);
+}
+
+.boton-azul {
+    background: var(--azul);
+    color: white;
+}
+
+.hero {
+    min-height: 590px;
+    background-image: url("imagenes/mural.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--crema);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-contenido {
+    width: 86%;
+    max-width: 1080px;
+    min-height: 520px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-texto {
+    padding: 35px 0 50px 6%;
+}
+
+.sobrelinea,
+.etiqueta {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--celeste);
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(76px, 10vw, 130px);
+    line-height: 1.05;
+    color: var(--crema);
+    text-shadow: 5px 6px 0 #081a34;
+}
+
+.corona {
+    font-family: Arial, sans-serif;
+    font-size: 45px;
+    color: #e6c982;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+.hero h2 {
+    font-size: 25px;
+    line-height: 1.2;
+    margin: 20px 0 12px;
+}
+
+.hero-texto > p:not(.sobrelinea) {
+    max-width: 390px;
+    font-size: 13px;
+    color: #d9e3f0;
+    margin-bottom: 24px;
+}
+
+.hero-personaje {
+    height: 475px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-personaje img {
+    width: 100%;
+    max-width: 420px;
+    height: 410px;
+    object-fit: cover;
+    object-position: center 24%;
+    border-radius: 46% 46% 8px 8px;
+    border: 5px solid #f5f1e622;
+}
+
+.bajar {
+    position: absolute;
+    bottom: 75px;
+    left: 4%;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--crema);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 22px;
+    z-index: 2;
+}
+
+.seccion {
+    padding: 90px max(7%, calc((100% - 1080px) / 2));
+}
+
+.proyectos {
+    padding-top: 70px;
+}
+
+.encabezado-seccion {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.encabezado-seccion h2,
+.encabezado-centro h2,
+.sobre h2 {
+    font-size: 42px;
+    color: var(--azul);
+    line-height: 1.2;
+}
+
+.encabezado-seccion p:not(.etiqueta),
+.encabezado-centro > p:last-child {
+    font-size: 13px;
+    color: #52647a;
+}
+
+.enlace {
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.rejilla-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tarjeta-proyecto {
+    background: #fffaf1;
+    border: 1px solid #d5dbe3;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 0 var(--azul);
+    transition: 0.3s;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-7px);
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.info-proyecto {
+    padding: 16px;
+}
+
+.info-proyecto h3 {
+    font-size: 15px;
+    margin: 4px 0;
+}
+
+.info-proyecto p {
+    font-size: 12px;
+    color: #637087;
+}
+
+.categoria {
+    font-size: 10px;
+    color: var(--azul-claro);
+    font-weight: 700;
+}
+
+.sobre {
+    background: #e8edf3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre::after {
+    content: "♛";
+    position: absolute;
+    right: 2%;
+    bottom: -105px;
+    font-size: 270px;
+    color: #2e5b880d;
+    transform: rotate(-15deg);
+}
+
+.sobre h2 {
+    margin-bottom: 20px;
+}
+
+.sobre-texto p:not(.etiqueta) {
+    font-size: 14px;
+    color: #52647a;
+    margin-bottom: 15px;
+}
+
+.sobre-texto .intro {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--azul);
+}
+
+.sobre-texto .boton {
+    margin-top: 12px;
+}
+
+.foto-marco {
+    height: 260px;
+    max-width: 360px;
+    margin: 0 auto 25px;
+    background: var(--azul);
+    border: 10px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px #0b1f3b20;
+}
+
+.foto-marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #fffaf1;
+    border-radius: 12px;
+    padding: 20px 8px;
+}
+
+.estadisticas div {
+    text-align: center;
+    border-right: 1px solid #d5dbe3;
+}
+
+.estadisticas div:last-child {
+    border: none;
+}
+
+.estadisticas strong {
+    display: block;
+    font-size: 25px;
+    color: var(--azul);
+}
+
+.estadisticas span {
+    font-size: 10px;
+    color: #53647a;
+}
+
+.habilidades {
+    background: var(--crema);
+}
+
+.encabezado-centro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.encabezado-centro h2 {
+    margin-bottom: 8px;
+}
+
+.rejilla-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.habilidad {
+    background: #fffaf1;
+    border: 1px solid #9bb7d4;
+    border-radius: 14px;
+    padding: 25px 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.habilidad:hover {
+    background: #eaf1f8;
+    transform: translateY(-4px);
+}
+
+.icono {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 12px;
+    background: var(--azul);
+    color: white;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.icono.letras {
+    font-size: 21px;
+}
+
+.habilidad h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.habilidad p {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.contacto {
+    background: #e8edf3;
+}
+
+.contacto-contenido {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario label {
+    display: block;
+}
+
+.formulario label span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.3px solid #1a3658;
+    border-radius: 13px;
+    background: #fffaf1;
+    color: var(--azul);
+    font: 13px 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    box-shadow: 0 0 0 3px #7ea4d955;
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.redes {
+    border-left: 1px solid #9aabba;
+    padding: 5px 0 0 45px;
+    text-align: center;
+}
+
+.redes h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.redes p {
+    font-size: 12px;
+    color: #617188;
+    max-width: 270px;
+    margin: 0 auto 22px;
+}
+
+.redes-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.redes-iconos a {
+    width: 43px;
+    height: 43px;
+    border: 1.5px solid var(--azul);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.redes-iconos a:hover {
+    background: var(--azul);
+    color: white;
+}
+
+.corona-grande {
+    font-family: Arial, sans-serif;
+    font-size: 125px;
+    color: var(--azul);
+    line-height: 1.5;
+    margin-top: 20px;
+    transform: rotate(-8deg);
+}
+
+footer {
+    background: #0b1a35;
+    color: #f7f2e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 7%;
+    font-size: 11px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+@media (max-width: 800px) {
+
+    .barra {
+        padding: 0 4%;
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .marca img {
+        width: 85px;
+    }
+
+    .navegacion {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 12px;
+    }
+
+    .navegacion a {
+        font-size: 10px;
+    }
+
+    .hero-contenido {
+        width: 90%;
+    }
+
+    .hero-personaje {
+        height: 390px;
+    }
+
+    .hero-personaje img {
+        height: 330px;
+    }
+
+    .seccion {
+        padding: 65px 6%;
+    }
+
+    .rejilla-proyectos {
+        gap: 14px;
+    }
+
+    .tarjeta-proyecto img {
+        height: 145px;
+    }
+
+}
+
+@media (max-width: 580px) {
+
+    .navegacion {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .navegacion a {
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 55px;
+    }
+
+    .hero-texto {
+        padding: 0;
+    }
+
+    .hero-texto > p:not(.sobrelinea) {
+        margin: 0 auto 20px;
+    }
+
+    .hero-personaje {
+        height: 260px;
+        margin-top: 10px;
+    }
+
+    .hero-personaje img {
+        width: 230px;
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 82px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .bajar {
+        bottom: 52px;
+    }
+
+    .encabezado-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .encabezado-seccion h2,
+    .encabezado-centro h2,
+    .sobre h2 {
+        font-size: 35px;
+    }
+
+    .rejilla-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-proyecto img {
+        height: 210px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .rejilla-habilidades {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .habilidad {
+        padding: 20px 10px;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .redes {
+        border-left: none;
+        border-top: 1px solid #9aabba;
+        padding: 25px 0 0;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+}
